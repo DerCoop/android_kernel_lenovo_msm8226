@@ -9,7 +9,8 @@ dtc-objs	+= dtc-lexer.lex.o dtc-parser.tab.o
 
 # Source files need to get at the userspace version of libfdt_env.h to compile
 
-HOSTCFLAGS_DTC := -I$(src) -I$(src)/libfdt
+# XMSX https://git.kernel.org/pub/scm/utils/dtc/dtc.git/commit/?id=0e9225eb0dfec51def612b928d2f1836b092bc7e
+HOSTCFLAGS_DTC := -I$(src) -I$(src)/libfdt -fcommon
 
 HOSTCFLAGS_checks.o := $(HOSTCFLAGS_DTC)
 HOSTCFLAGS_data.o := $(HOSTCFLAGS_DTC)

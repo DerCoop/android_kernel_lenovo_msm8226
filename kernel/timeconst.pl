@@ -370,7 +370,8 @@ if ($hz eq '--can') {
 	}
 
 	@val = @{$canned_values{$hz}};
-	if (!defined(@val)) {
+	# XMSX https://bugzilla.redhat.com/show_bug.cgi?id=1262571
+	if (!(@val)) {
 		@val = compute_values($hz);
 	}
 	output($hz, @val);
